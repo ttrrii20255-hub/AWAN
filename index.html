@@ -127,7 +127,6 @@
     <section>
       <h2><span class="icon">📞</span> Kontak</h2>
       <p><strong>Nomor resmi:</strong> <a href="tel:+6285142618756">+62 851-4261-8756</a></p>
-      <p><strong>Jumlah saudara:</strong> 4</p>
       <button class="btn" id="downloadVCard">Download vCard</button>
     </section>
 
@@ -138,26 +137,7 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // vCard generator
-    document.getElementById('downloadVCard').addEventListener('click', () => {
-      const vcard = 
-`BEGIN:VCARD
-VERSION:3.0
-N:Hikmawan;Fani Tri;;;
-FN:Fani Tri Hikmawan
-NICKNAME:Awan
-TEL;TYPE=CELL:+6285142618756
-ADR;TYPE=HOME:;;Pekalongan;Jawa Tengah;;Indonesia
-NOTE:Pelajar; Hobi: Bulu Tangkis, Bersepeda, Membaca
-END:VCARD`;
-      const blob = new Blob([vcard], {type:'text/vcard'});
-      const url = URL.createObjectURL(blob);
-      const a=document.createElement('a');
-      a.href=url;a.download='Fani_Tri_Hikmawan.vcf';
-      document.body.appendChild(a);a.click();a.remove();
-      setTimeout(()=>URL.revokeObjectURL(url),1000);
-    });
+    
 
     // Scroll animation (reveal sections)
     const sections = document.querySelectorAll("section");
